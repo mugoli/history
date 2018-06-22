@@ -2,14 +2,40 @@
 
 ### Topic Modelling in R
 
-* Downloaded nodes and links csv filesâ¨* Opened RStudio in DHBoxâ¨* Created a new project in RStudioâ¨* Uploaded nodes and links to project folder in File Managerâ¨* Ran a new script in RStudio: install.packages('igraph')â¨* Then, ran following script: library('igraph')â¨* Console says:â¨	* The following objects are masked from âpackage:statsâ:
+* Downloaded nodes and links csv files
+* Opened RStudio in DHBoxâ¨* Created a new project in RStudio
+* Uploaded nodes and links to project folder in File Manager
+* Ran a new script in RStudio: install.packages('igraph')
+* Then, ran following script: library('igraph')
+* Console says:
+	* The following objects are masked from 'package:stats':
 	* decompose, spectrum
-	* The following object is masked from âpackage:baseâ:
-	* unionâ¨â¨* Made a mistakeâ¦â¨* Went into file manager and deleted the module4 folderâ¨* Created a new folder called texasâ¨* Uploaded nodes and links files to the folder via RStudioâ¨* Ran install.packages('igraph') scriptâ¨* Ran library('igraph')â¨* Ran nodes <- read.csv("texasnodes.csv", header=T, as.is=T)â¨	*links <- read.csv("texaslinks.csv", header=T, as.is=T)â¨* Ran #examine dataâ¨	* head(nodes)â¨	* head(links)
+	* The following object is masked from 'package:base':
+	* union
+* Made a mistake...
+* Went into file manager and deleted the module4 folder
+* Created a new folder called texas
+* Uploaded nodes and links files to the folder via RStudio
+* Ran install.packages('igraph') script
+* Ran library('igraph')
+* Ran nodes <- read.csv("texasnodes.csv", header=T, as.is=T)
+	*links <- read.csv("texaslinks.csv", header=T, as.is=T)
+* Ran #examine data
+	* head(nodes)
+	* head(links)
 	* nrow(nodes); length(unique(nodes$id))
 	* nrow(links); nrow(unique(links[,c("source", "target")]))â¨
-* Ran Â links <- aggregate(links[,3], links[,-3], sum)â¨	* links <- links[order(links$target, links$source),]â¨	* colnames(links)[3] <- "weight"â¨	* rownames(links) <- NULLâ¨	* head(links)â¨
-* Ran net <- graph.data.frame(d=links, vertices=nodes, directed=T)â¨* Ran plot(net, edge.arrow.size=.4,vertex.label=NA) which was supposed to allow me to visualize the data, but ran into this error in the console: Error in plot.new() : figure margins too largeâ¨* Tried it again, still the sameâ¨* Does plots too large mean I selected the wrong files?â¨* Tried to play around and change the size=X to different numers (1, 9, 100) and run the scripts, which did nothing. â¨* Ran plot(net, edge.arrow.size=.4,vertex.label=NA)â¨
+* Ran links <- aggregate(links[,3], links[,-3], sum)
+	* links <- links[order(links$target, links$source),]
+	* colnames(links)[3] <- "weight"
+	* rownames(links) <- NULL
+	* head(links)
+* Ran net <- graph.data.frame(d=links, vertices=nodes, directed=T)
+* Ran plot(net, edge.arrow.size=.4,vertex.label=NA) which was supposed to allow me to visualize the data, but ran into this error in the console: Error in plot.new() : figure margins too large
+* Tried it again, still the same
+* Does plots too large mean I selected the wrong files?
+* Tried to play around and change the size=X to different numers (1, 9, 100) and run the scripts, which did nothing. 
+* Ran plot(net, edge.arrow.size=.4,vertex.label=NA)
 
 Note: I truly hope that I will be able to find a fix for this, since I believe that this visualization has an interesting story to tell from the data. There are plenty letters being written to-from individuals, what were the networks, and how can I tie these findings to outside literature in order to build a data-driven story? Saving this script to try again with fresh eyes.
 
@@ -19,11 +45,11 @@ Note 2: Tries again this exact process and got to the same point. Abort mission.
 * downloaded Cytoscape from http://www.cytoscape.org/
 * created new project with nodes list
 * played around with settings, opted for a circular chart
-	* went in the layout menu -> selected attribute circle layout -> then selected the âselectedâ option
+	* went in the layout menu -> selected attribute circle layout -> then selected the "selected" option
 * selected people of interest, coloured them light blue by using the bypass setting in the left window
-* Created a pink background by using the network mode in the left window, then selecting the ânetworkâ bypass backgroung paint -> pink
+* Created a pink background by using the network mode in the left window, then selecting the "network" bypass backgroung paint -> pink
 * the style or this visualization: big labels
-* followed âthis tutorialâ to save my style file and my network file
+* followed this tutorial to save my style file and my network file
 * uploaded both to gsit
 * have my visualization complete!
 
